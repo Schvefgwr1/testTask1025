@@ -16,24 +16,58 @@ public class Tube {
     public boolean isEmpty() { return currentSize == 0; }
     public boolean isFull() { return currentSize >= maxSize; }
 
-    public Integer peekTop() { return elements.peekFirst(); }
-
     public Deque<Integer> getElements() { return elements; }
 
-    public Integer peekTopColor() { return isEmpty() ? null : peekTop(); }
-
-    public boolean canPourFrom(Tube from) {
-        if (this.isFull() || from.isEmpty()) return false;
-        Integer colorFrom = from.peekTopColor();
-        Integer colorTo = this.peekTopColor();
-        return this.isEmpty() || colorFrom.equals(colorTo);
+    public Integer peekTopColor() {
+        return isEmpty() ? null : elements.peekFirst();
     }
 
-    public void pourOneFrom(Tube from) {
-        Integer color = from.elements.removeFirst();
-        from.currentSize--;
-        this.elements.addFirst(color);
-        this.currentSize++;
+    public boolean canNotPourFrom(Tube from) {
+        if (this.isFull() || from.isEmpty()) return true;
+        Integer colorFrom = from.peekTopColor();
+        Integer colorTo = this.peekTopColor();
+        return !this.isEmpty() && !colorFrom.equals(colorTo);
+    }
+
+    /** Считает количество верхних капель одного цвета */
+    public int countTopColorGroup() {
+        if (isEmpty()) return 0;
+        Integer topColor = peekTopColor();
+        int count = 0;
+        for (Integer color : elements) {
+            if (color.equals(topColor)) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
+
+    /** Переливает все капли одного цвета (столько, сколько возможно) */
+    public void pourAllOfColorFrom(Tube from) {
+        if (canNotPourFrom(from)) return;
+
+        int availableToPour = from.countTopColorGroup();
+        int spaceAvailable = this.maxSize - this.currentSize;
+        int toPour = Math.min(availableToPour, spaceAvailable);
+        
+        for (int i = 0; i < toPour; i++) {
+            Integer color = from.elements.removeFirst();
+            from.currentSize--;
+            this.elements.addFirst(color);
+            this.currentSize++;
+        }
+    }
+
+    /** Проверяет, что пробирка отсортирована (все капли одного цвета) */
+    public boolean isSorted() {
+        if (isEmpty()) return true;
+        Integer firstColor = peekTopColor();
+        for (Integer color : elements) {
+            if (!color.equals(firstColor)) return false;
+        }
+        return true;
     }
 
     public Tube copy() {

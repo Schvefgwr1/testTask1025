@@ -13,7 +13,7 @@ public class MachineStates {
 
     /** Главный метод поиска решения */
     public List<GameState> findSolution() {
-        GameState goal = bfs(initialState);
+        GameState goal = aStar(initialState);
         if (goal == null) {
             System.out.println("\nРешение не найдено.");
             return null;
@@ -22,28 +22,41 @@ public class MachineStates {
         return reconstructPath(goal);
     }
 
-    /** Поиск в ширину (BFS) */
-    private GameState bfs(GameState start) {
-        Queue<GameState> queue = new LinkedList<>();
-        queue.add(start);
+    /** Алгоритм A* - поиск с эвристикой */
+    private GameState aStar(GameState start) {
+        PriorityQueue<GameState> openSet = new PriorityQueue<>(
+            Comparator.comparingInt(GameState::getTotalCost)
+        );
+        
+        openSet.add(start);
         visited.add(start);
+        
+        int statesExplored = 0;
+        int lastReported = 0;
 
-        while (!queue.isEmpty()) {
-            GameState current = queue.poll();
-            //System.out.println(current);
+        while (!openSet.isEmpty()) {
+            GameState current = openSet.poll();
+            statesExplored++;
+            
+            // Периодически выводим прогресс
+            if (statesExplored / 10 > lastReported) {
+                lastReported = statesExplored / 10;
+                System.out.printf("Исследовано состояний: %d, глубина: %d, эвристика: %d, очередь: %d\n", 
+                    statesExplored, current.getDepth(), current.calculateHeuristic(), openSet.size());
+            }
 
             if (isGoal(current)) {
-                return current; // нашли решение
+                return current;
             }
 
             for (GameState child : current.createChildren()) {
                 if (!visited.contains(child)) {
                     visited.add(child);
-                    queue.add(child);
+                    openSet.add(child);
                 }
             }
         }
-        return null; // решения нет
+        return null;
     }
 
     /** Проверка, достигнуто ли целевое состояние */
