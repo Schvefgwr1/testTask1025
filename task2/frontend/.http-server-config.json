@@ -1,0 +1,22 @@
+{
+  "proxy": {
+    "/": "/index.html",
+    "/upload": "/upload.html",
+    "/stats": "/stats.html"
+  },
+  "rewrites": [
+    {
+      "from": "^/$",
+      "to": "/index.html"
+    },
+    {
+      "from": "^/upload$",
+      "to": "/upload.html"
+    },
+    {
+      "from": "^/stats$",
+      "to": "/stats.html"
+    }
+  ]
+}
+

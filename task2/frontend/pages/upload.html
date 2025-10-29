@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Загрузка файлов - File Service</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/upload.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <header class="header">
+        <h1>File Service</h1>
+        <nav>
+            <a href="/upload" class="active">Загрузка</a>
+            <a href="/stats">Статистика</a>
+            <button id="logoutBtn" class="btn btn-secondary">Выход</button>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="upload-container">
+            <h2>Загрузить файл</h2>
+
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="file-input" class="file-label">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span>Выберите файл или перетащите его сюда</span>
+                        <input type="file" id="file-input" name="file" required>
+                    </label>
+                </div>
+
+                <div id="file-info" class="file-info hidden">
+                    <strong>Выбран файл:</strong> <span id="file-name"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="uploadBtn">Загрузить</button>
+            </form>
+
+            <div class="message hidden" id="message"></div>
+
+            <div class="upload-result hidden" id="uploadResult">
+                <h3>Файл успешно загружен!</h3>
+                <div class="result-info">
+                    <p><strong>UUID файла:</strong> <span id="file-uuid"></span></p>
+                    <p><strong>Ссылка для скачивания:</strong></p>
+                    <div class="link-container">
+                        <input type="text" id="download-link" readonly>
+                        <button class="btn btn-secondary" id="copyLinkBtn">Копировать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+

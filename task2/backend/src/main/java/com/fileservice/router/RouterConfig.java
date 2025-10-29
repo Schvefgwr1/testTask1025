@@ -36,7 +36,7 @@ public class RouterConfig {
             Map<String, String> pathParams = (Map<String, String>) exchange.getAttribute("pathParams");
             String uuid = pathParams.get("uuid");
             fileHandler.handleDownload(exchange, uuid);
-        }, authMiddleware);
+        });
         router.get("/api/stats/files/", fileHandler::handleStats, authMiddleware);
 
         return router;

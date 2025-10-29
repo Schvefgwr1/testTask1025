@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вход / Регистрация - File Service</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/auth.js" type="module"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="auth-container">
+        <h1>File Service</h1>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="login">Вход</button>
+            <button class="tab" data-tab="register">Регистрация</button>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-container" id="login-form">
+            <h2>Вход в систему</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="login-username">Логин</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Пароль</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Войти</button>
+                <div class="error-message" id="login-error"></div>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-container hidden" id="register-form">
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="register-username">Логин</label>
+                    <input type="text" id="register-username" name="username" required maxlength="64">
+                    <small>Максимум 64 символа</small>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Пароль</label>
+                    <input type="password" id="register-password" name="password" required minlength="6">
+                    <small>Минимум 6 символов</small>
+                </div>
+                <div class="form-group">
+                    <label for="register-password-confirm">Подтвердите пароль</label>
+                    <input type="password" id="register-password-confirm" name="password-confirm" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                <div class="error-message" id="register-error"></div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

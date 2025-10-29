@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Статистика - File Service</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/stats.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <header class="header">
+        <h1>File Service</h1>
+        <nav>
+            <a href="/upload">Загрузка</a>
+            <a href="/stats" class="active">Статистика</a>
+            <button id="logoutBtn" class="btn btn-secondary">Выход</button>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="stats-container">
+            <h2>Статистика файлов</h2>
+
+            <div class="stats-summary">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalFiles">0</div>
+                    <div class="stat-label">Всего файлов</div>
+                </div>
+            </div>
+
+            <div class="message hidden" id="message"></div>
+
+            <div class="files-table-container">
+                <table class="files-table" id="filesTable">
+                    <thead>
+                    <tr>
+                        <th>Имя файла</th>
+                        <th>Дата загрузки</th>
+                        <th>Количество скачиваний</th>
+                        <th>Последнее скачивание</th>
+                        <th>Действия</th>
+                    </tr>
+                    </thead>
+                    <tbody id="filesTableBody">
+                    <!-- Данные будут загружены через JavaScript -->
+                    </tbody>
+                </table>
+
+                <div class="empty-state hidden" id="emptyState">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                        <polyline points="13 2 13 9 20 9"></polyline>
+                    </svg>
+                    <p>У вас пока нет загруженных файлов</p>
+                    <a href="upload.html" class="btn btn-primary">Загрузить файл</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+
