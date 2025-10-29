@@ -1,0 +1,10 @@
+# Список SQL миграций для базы данных
+# Миграции выполняются в порядке, указанном в этом файле
+# Формат имени файла: V{version}__{description}.sql
+
+migrations:
+  - V1__initial_schema.sql
+  # Добавляйте новые миграции ниже
+  # - V2__add_user_roles.sql
+  # - V3__add_file_metadata.sql
+
