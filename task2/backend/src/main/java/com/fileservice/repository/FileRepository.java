@@ -89,7 +89,7 @@ public class FileRepository implements IFileRepository {
 
     public List<FileInfo> findOldFiles(int daysOld) {
         String sql = "SELECT uuid, user_id, path, created_at, last_download_at, download_count, isDeleted " +
-                    "FROM files WHERE created_at < CURRENT_TIMESTAMP - INTERVAL ? DAY " +
+                    "FROM files WHERE created_at < CURRENT_TIMESTAMP - make_interval(days => ?) " +
                     "AND isDeleted = false";
         
         List<FileInfo> files = new ArrayList<>();
