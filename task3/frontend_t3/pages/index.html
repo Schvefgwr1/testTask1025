@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Прогноз погоды - Weather Service</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Import Maps для разрешения модулей из node_modules -->
+    <script type="importmap">
+    {
+        "imports": {
+            "chart.js": "../node_modules/chart.js/auto/auto.js",
+            "@kurkle/color": "../node_modules/@kurkle/color/dist/color.esm.js"
+        }
+    }
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Прогноз погоды</h1>
+    </div>
+
+    <div class="content">
+        <div class="weather-container">
+            <h2>Получить прогноз погоды</h2>
+            
+            <form id="weatherForm" class="weather-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="city-input">Введите название города</label>
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="city-input" 
+                            name="city" 
+                            placeholder="Например: Moscow, London, Tokyo" 
+                            required
+                        >
+                        <button type="submit" class="btn btn-primary">Получить прогноз</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="message" id="message"></div>
+
+            <div class="weather-info" id="weather-info" style="display: none;">
+                <div class="weather-header">
+                    <h3 id="city-name">-</h3>
+                    <p class="coordinates" id="coordinates">-</p>
+                    <p class="update-time">Обновлено: <span id="update-time">-</span></p>
+                    <p class="next-update">Следующее обновление: <span id="next-update">-</span></p>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+
+                <div class="stats-grid" id="stats-grid">
+                    <!-- Статистика будет добавлена динамически -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
+
