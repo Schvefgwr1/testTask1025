@@ -1,9 +1,9 @@
 package com.fileservice.middleware;
 
-import com.fileservice.core.http.Middleware;
-import com.fileservice.core.http.MiddlewareChain;
-import com.fileservice.exception.ApplicationException;
-import com.fileservice.core.http.ResponseHelper;
+import com.common.core.http.Middleware;
+import com.common.core.http.MiddlewareChain;
+import com.common.core.exception.ApplicationException;
+import com.common.core.http.ResponseHelper;
 import com.sun.net.httpserver.HttpExchange;
 import lombok.AllArgsConstructor;
 

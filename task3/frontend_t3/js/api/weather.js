@@ -17,7 +17,9 @@ export async function getWeatherForCity(city) {
 
     if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.reason || `HTTP error! status: ${response.status}`);
+        const err = new Error(errorData.reason || `HTTP error! status: ${response.status}`);
+        err.status = response.status;
+        throw err;
     }
 
     return await response.json();

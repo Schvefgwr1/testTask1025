@@ -1,11 +1,11 @@
 package com.fileservice.service;
 
-import com.fileservice.core.config.Config;
+import com.common.core.config.Config;
 import com.fileservice.dto.FileDownloadDto;
 import com.fileservice.dto.FileStatsResponseDto;
 import com.fileservice.dto.FileUploadResponseDto;
 import com.fileservice.exception.FileNotFoundException;
-import com.fileservice.exception.ValidationException;
+import com.common.core.exception.ValidationException;
 import com.fileservice.model.FileInfo;
 import com.fileservice.repository.IFileRepository;
 import lombok.AllArgsConstructor;

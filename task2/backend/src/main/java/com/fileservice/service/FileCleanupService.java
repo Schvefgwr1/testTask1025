@@ -1,6 +1,6 @@
 package com.fileservice.service;
 
-import com.fileservice.core.config.Config;
+import com.common.core.config.Config;
 import com.fileservice.model.FileInfo;
 import com.fileservice.repository.IFileRepository;
 

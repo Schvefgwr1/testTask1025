@@ -1,5 +1,7 @@
 package com.meteoservice.exception;
 
+import com.common.core.exception.ApplicationException;
+
 /**
  * Исключение при ошибке геокодинга
  */

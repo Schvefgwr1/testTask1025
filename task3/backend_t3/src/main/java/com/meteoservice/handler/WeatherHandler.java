@@ -1,18 +1,15 @@
 package com.meteoservice.handler;
 
 import com.google.gson.Gson;
-import com.meteoservice.core.http.PrimaryHandler;
-import com.meteoservice.core.http.ResponseHelper;
-import com.meteoservice.exception.ValidationException;
-import com.meteoservice.model.HourlyTemperature;
+import com.common.core.http.MultipartParser;
+import com.common.core.http.PrimaryHandler;
+import com.common.core.http.ResponseHelper;
+import com.common.core.exception.ValidationException;
 import com.meteoservice.model.WeatherData;
 import com.meteoservice.service.IWeatherService;
 import com.sun.net.httpserver.HttpExchange;
 
 import java.io.IOException;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Handler для обработки запросов погоды
@@ -25,7 +22,7 @@ public class WeatherHandler extends PrimaryHandler {
         Gson gson,
         ResponseHelper responseHelper
     ) {
-        super(gson, responseHelper);
+        super(gson, responseHelper, new MultipartParser());
         this.weatherService = weatherService;
     }
 

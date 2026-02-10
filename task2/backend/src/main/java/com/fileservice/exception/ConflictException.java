@@ -1,5 +1,7 @@
 package com.fileservice.exception;
 
+import com.common.core.exception.ApplicationException;
+
 /**
  * Исключение конфликта (например, пользователь уже существует) - 409 Conflict
  */

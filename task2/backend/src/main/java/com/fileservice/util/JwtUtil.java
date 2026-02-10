@@ -1,6 +1,6 @@
 package com.fileservice.util;
 
-import com.fileservice.core.config.Config;
+import com.common.core.config.Config;
 import com.fileservice.exception.InvalidTokenException;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

@@ -1,7 +1,7 @@
 package com.fileservice.router;
 
-import com.fileservice.core.http.Router;
-import com.fileservice.core.http.StandardRouter;
+import com.common.core.http.Router;
+import com.common.core.http.StandardRouter;
 import com.fileservice.handler.AuthHandler;
 import com.fileservice.handler.FileHandler;
 import com.fileservice.middleware.AuthenticationMiddleware;

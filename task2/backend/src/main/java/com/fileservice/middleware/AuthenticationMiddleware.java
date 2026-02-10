@@ -1,7 +1,7 @@
 package com.fileservice.middleware;
 
-import com.fileservice.core.http.Middleware;
-import com.fileservice.core.http.MiddlewareChain;
+import com.common.core.http.Middleware;
+import com.common.core.http.MiddlewareChain;
 import com.fileservice.exception.AuthenticationException;
 import com.fileservice.exception.InvalidTokenException;
 import com.fileservice.model.Session;

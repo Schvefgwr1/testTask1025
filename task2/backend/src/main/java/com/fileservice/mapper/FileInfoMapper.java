@@ -1,6 +1,6 @@
 package com.fileservice.mapper;
 
-import com.fileservice.exception.DatabaseException;
+import com.common.core.exception.DatabaseException;
 import com.fileservice.model.FileInfo;
 
 import java.sql.ResultSet;

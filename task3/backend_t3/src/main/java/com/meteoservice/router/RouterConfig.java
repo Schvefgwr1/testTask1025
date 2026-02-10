@@ -1,7 +1,7 @@
 package com.meteoservice.router;
 
-import com.meteoservice.core.http.Router;
-import com.meteoservice.core.http.StandardRouter;
+import com.common.core.http.Router;
+import com.common.core.http.StandardRouter;
 import com.meteoservice.handler.WeatherHandler;
 import com.meteoservice.middleware.CorsMiddleware;
 import com.meteoservice.middleware.ExceptionHandlerMiddleware;

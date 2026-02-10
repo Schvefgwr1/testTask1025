@@ -1,7 +1,7 @@
 package com.meteoservice.middleware;
 
-import com.meteoservice.core.http.Middleware;
-import com.meteoservice.core.http.MiddlewareChain;
+import com.common.core.http.Middleware;
+import com.common.core.http.MiddlewareChain;
 import com.sun.net.httpserver.HttpExchange;
 
 import java.io.IOException;

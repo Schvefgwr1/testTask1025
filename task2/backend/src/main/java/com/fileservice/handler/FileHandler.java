@@ -1,12 +1,12 @@
 package com.fileservice.handler;
 
-import com.fileservice.core.http.PrimaryHandler;
+import com.common.core.http.PrimaryHandler;
 import com.fileservice.dto.FileDownloadDto;
 import com.fileservice.dto.FileStatsResponseDto;
 import com.fileservice.dto.FileUploadResponseDto;
 import com.fileservice.service.IFileService;
-import com.fileservice.core.http.MultipartParser;
-import com.fileservice.core.http.ResponseHelper;
+import com.common.core.http.MultipartParser;
+import com.common.core.http.ResponseHelper;
 import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 

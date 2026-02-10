@@ -2,7 +2,7 @@ package com.meteoservice.service;
 
 import com.meteoservice.client.IGeocodingClient;
 import com.meteoservice.client.IWeatherApiClient;
-import com.meteoservice.core.cache.ICache;
+import com.common.core.cache.ICache;
 import com.meteoservice.model.Coordinates;
 import com.meteoservice.model.HourlyTemperature;
 import com.meteoservice.model.WeatherData;

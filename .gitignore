@@ -1,3 +1,6 @@
 *.iml
 .idea
 task1/out
+.cursor
+*/target
+*/out

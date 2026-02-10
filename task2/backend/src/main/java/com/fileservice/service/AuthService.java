@@ -5,7 +5,7 @@ import com.fileservice.dto.LoginResponseDto;
 import com.fileservice.exception.InvalidCredentialsException;
 import com.fileservice.exception.UserAlreadyExistsException;
 import com.fileservice.exception.UserNotFoundException;
-import com.fileservice.exception.ValidationException;
+import com.common.core.exception.ValidationException;
 import com.fileservice.model.User;
 import com.fileservice.repository.ISessionRepository;
 import com.fileservice.repository.IUserRepository;

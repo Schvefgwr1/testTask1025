@@ -3,7 +3,7 @@ package com.fileservice.service;
 import com.fileservice.dto.FileDownloadDto;
 import com.fileservice.dto.FileStatsResponseDto;
 import com.fileservice.dto.FileUploadResponseDto;
-import com.fileservice.core.transaction.Transactional;
+import com.common.core.transaction.Transactional;
 
 import java.util.UUID;
 

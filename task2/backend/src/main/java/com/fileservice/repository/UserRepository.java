@@ -1,8 +1,7 @@
 package com.fileservice.repository;
 
-import com.fileservice.exception.DatabaseException;
+import com.common.core.exception.DatabaseException;
 import com.fileservice.mapper.IMapper;
-import com.fileservice.mapper.UserMapper;
 import com.fileservice.model.User;
 import lombok.AllArgsConstructor;
 

@@ -1,15 +1,15 @@
 package com.fileservice;
 
 import com.fileservice.router.RouterConfig;
-import com.fileservice.core.config.Config;
-import com.fileservice.core.db.DatabaseConnection;
+import com.common.core.config.Config;
+import com.common.core.db.DatabaseConnection;
 import com.fatboyindustrial.gsonjavatime.Converters;
-import com.fileservice.core.http.MultipartParser;
-import com.fileservice.core.http.OurHttpServer;
-import com.fileservice.core.http.ResponseHelper;
-import com.fileservice.core.http.Router;
-import com.fileservice.core.migration.*;
-import com.fileservice.core.transaction.TransactionalProxy;
+import com.common.core.http.MultipartParser;
+import com.common.core.http.OurHttpServer;
+import com.common.core.http.ResponseHelper;
+import com.common.core.http.Router;
+import com.common.core.migration.*;
+import com.common.core.transaction.TransactionalProxy;
 import com.fileservice.handler.AuthHandler;
 import com.fileservice.handler.FileHandler;
 import com.fileservice.mapper.*;

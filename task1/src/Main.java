@@ -6,6 +6,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("=== Вода и колбочки ===");
+        System.out.println("1 - Ручной ввод (игра)");
+        System.out.println("2 - Запуск тестов");
+        System.out.print("Выберите режим (1 или 2): ");
+
+        String choice = sc.nextLine().trim();
+        if ("2".equals(choice)) {
+            new GameTests().runTests();
+            return;
+        }
+        if (!"1".equals(choice)) {
+            System.out.println("Неверный выбор. Запускается режим ручного ввода.");
+        }
+
+        System.out.println("\n--- Режим ручного ввода ---");
         System.out.println("Введите количество пробирок (n):");
         int n = sc.nextInt();
         System.out.println("Введите объем каждой пробирки (v):");

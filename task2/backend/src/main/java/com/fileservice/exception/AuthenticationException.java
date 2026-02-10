@@ -1,5 +1,7 @@
 package com.fileservice.exception;
 
+import com.common.core.exception.ApplicationException;
+
 /**
  * Исключение аутентификации - 401 Unauthorized
  */

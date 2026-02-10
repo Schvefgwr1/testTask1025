@@ -1,7 +1,7 @@
 package com.fileservice.service;
 
 import com.fileservice.dto.AuthResponseDto;
-import com.fileservice.core.transaction.Transactional;
+import com.common.core.transaction.Transactional;
 import com.fileservice.dto.LoginResponseDto;
 
 /**

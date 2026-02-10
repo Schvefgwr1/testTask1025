@@ -1,5 +1,6 @@
 import { getWeatherForCity } from './api/weather.js';
-import Chart from 'chart.js';
+
+const Chart = window.Chart;
 
 // Глобальные переменные
 let currentCity = null;
@@ -50,7 +51,10 @@ async function loadWeatherData(city) {
 
     } catch (error) {
         console.error('Error loading weather:', error);
-        showMessage(`Ошибка загрузки данных: ${error.message}`, 'error');
+        const message = error.status === 404
+            ? 'Город не найден. Проверьте правильность ввода и попробуйте снова.'
+            : `Ошибка загрузки данных: ${error.message}`;
+        showMessage(message, 'error');
         hideWeatherInfo();
     }
 }

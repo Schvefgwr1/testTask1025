@@ -1,9 +1,9 @@
 package com.meteoservice.middleware;
 
-import com.meteoservice.core.http.Middleware;
-import com.meteoservice.core.http.MiddlewareChain;
-import com.meteoservice.core.http.ResponseHelper;
-import com.meteoservice.exception.ApplicationException;
+import com.common.core.http.Middleware;
+import com.common.core.http.MiddlewareChain;
+import com.common.core.http.ResponseHelper;
+import com.common.core.exception.ApplicationException;
 import com.sun.net.httpserver.HttpExchange;
 import lombok.AllArgsConstructor;
 

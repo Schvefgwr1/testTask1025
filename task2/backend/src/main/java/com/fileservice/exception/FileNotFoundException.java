@@ -1,5 +1,7 @@
 package com.fileservice.exception;
 
+import com.common.core.exception.NotFoundException;
+
 import java.util.UUID;
 
 /**
